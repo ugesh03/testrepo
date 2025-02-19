@@ -1,31 +1,10 @@
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any  // Runs on any available agent
-
+    agent any 
     stages {
-        stage('Clone Repository') {
+        stage('Stage 1') {
             steps {
-                git branch: 'main', url: 'https://github.com/ugesh03/testrepo.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'echo Building the application...'
-                sh 'mvn clean package'  // Example for Java projects
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'echo Running tests...'
-                sh 'mvn test'  // Run test cases
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sh 'echo Deploying application...'
-                sh 'scp target/*.jar ubuntu@18.206.118.151:/var/www/html/'  // Example deployment
+                echo 'Hello world!' 
             }
         }
     }
