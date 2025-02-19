@@ -1,20 +1,10 @@
 pipeline {
     agent any
-    
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                echo 'Building the application...'
+                bat 'whoami'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-            }
-        }
-  
+    }
+}
